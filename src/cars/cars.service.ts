@@ -6,21 +6,21 @@ import { CreateCarDto, UpdateCarDto } from './dto';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: uuid(),
-      brand: 'Toyota',
-      model: 'Corolla',
-    },
-    {
-      id: uuid(),
-      brand: 'BMW',
-      model: 'Serie 3',
-    },
-    {
-      id: uuid(),
-      brand: 'Audi',
-      model: 'A3',
-    },
+    // {
+    //   id: uuid(),
+    //   brand: 'Toyota',
+    //   model: 'Corolla',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'BMW',
+    //   model: 'Serie 3',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'Audi',
+    //   model: 'A3',
+    // },
   ];
   //por defecto el método es public por lo que en este caso no es necesario
   public findAll() {
@@ -80,5 +80,9 @@ export class CarsService {
     this.cars = this.cars.filter((car) => car.id !== id);
 
     return `success, car with id ${id} was deleted`;
+  }
+
+  fillCarsWithSeedData(cars: Car[]) {
+    this.cars = cars;
   }
 }
